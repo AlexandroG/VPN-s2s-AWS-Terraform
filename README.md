@@ -1,13 +1,9 @@
-# Simple-Terraform-Architecture
-A simple terraform architecture with a web and db layers
+# Create a VPN site 2 site in your AWS account with Terraform
+this code was created in a previous project: https://github.com/AlexandroG/Simple-Terraform-Architecture.git
 
-## Expectation
-This project aims to provide just a simple IaC that is a good point to start deploying your own infrastructure with terraform.
-Resource that will be created:
-- RDS Instance with multi-az enabled
-- 2 web server without asg and EFS to share content.
-- Application Load Balancer
-- Vpc, subnet, igw, sg, and routing table
+Just the vpn.tf file has been added with all the parameters necessary for configuring the aws side s2s vpn.
+So, refer to the project mentioned above for the readme file.
+
 
 ## Pre-requisite
 
@@ -20,10 +16,3 @@ aws --version # prints aws-cli/2.0.36 Python/3.7.4 Darwin/18.7.0 botocore/2.0.0
 aws configure # configure your AWS CLI profile
 ```
 - Make sure to change your credentials path and region in ```main.tf``` file before to initializate the project 
-
-
-N.B.
-There are some consideration:
-1. the purpose of this project is to start using terraform and understand how the various resources are created
-2. I've not used some resources necessary to deploy this kind of infrastructure like autoscaling group, efs etc..
-3. This infrastructure is not meant to be scalable and high reliability.
